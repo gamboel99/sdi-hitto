@@ -36,11 +36,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ==== Logo Handling ====
-logo_path = "uploads/logo.png"
-if os.path.exists(logo_path):
-    logo = logo_path
-else:
-    logo = "https://via.placeholder.com/70x70.png?text=Logo"
+logo = "https://raw.githubusercontent.com/gamboel99/sdi-hitto/main/uploads/logo.png"
 
 st.markdown(f'''
 <div class="header">

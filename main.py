@@ -36,7 +36,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ==== Logo Handling ====
-logo_path = "uploads/logo.png"
+logo_path = "logo.png"
 if os.path.exists(logo_path):
     logo = logo_path
 else:

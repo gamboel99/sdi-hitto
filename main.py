@@ -6,10 +6,11 @@ import os
 st.set_page_config(page_title="SDI Hitto", layout="wide")
 
 # ==== Custom CSS ====
+
 st.markdown("""
 <style>
-    .main {
-        background-color: #ccffcc;
+    .main, .block-container {
+        background-color: #1E5631;
     }
     .header {
         background-color: #006600;

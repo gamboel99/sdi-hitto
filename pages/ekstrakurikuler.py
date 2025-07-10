@@ -1,8 +1,7 @@
-
 import streamlit as st
 
 def run():
-    st.title("Ekstrakurikuler SDI Hitto")
+    st.title("ekstrakurikuler SDI Hitto")
 
     ekstra = st.selectbox("Pilih Ekstrakurikuler", [
         "Pramuka", "Tari", "Lalaran", "Rebana", "Drumband", "Komputer / IT", "Lainnya"

@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import os
+import pages.ekstrakurikuler as ekstra
 
 st.set_page_config(page_title="SDI Hitto", layout="wide")
 
@@ -34,10 +35,17 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+# ==== Logo Handling ====
+logo_path = "uploads/logo.png"
+if os.path.exists(logo_path):
+    logo = logo_path
+else:
+    logo = "https://via.placeholder.com/70x70.png?text=Logo"
+
 # ==== Header Section ====
-st.markdown('''
+st.markdown(f'''
 <div class="header">
-    <img src="uploads/logo.png">
+    <img src="{logo}">
     <div>
         <div class="header-title">SD ISLAM HIDAYATUTH THOLIBIN</div>
         <div class="subheader">Website Resmi SDI Hitto - Cerdas & Islami</div>
@@ -111,10 +119,7 @@ with tabs[5]:
 
 # ========== Tab: Ekstrakurikuler ==========
 with tabs[6]:
-    try:
-        st.switch_page("pages/ekstrakurikuler.py")
-    except Exception as e:
-        st.error("Halaman ekstrakurikuler belum ditemukan.")
+    ekstra.run()
 
 # ========== Tab: Hubungi Kami ==========
 with tabs[7]:

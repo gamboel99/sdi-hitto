@@ -1,43 +1,65 @@
 import streamlit as st
+import pandas as pd
+import os
 
 st.set_page_config(page_title="SDI Hitto", layout="wide")
 
-# ==== Custom CSS for Green Theme and Header ====
+# ==== Custom CSS for Header and Background ====
 st.markdown("""
 <style>
-    body {
-        background-color: #ccffcc;
-    }
-    .main > div {
+    .main {
         background-color: #ccffcc;
     }
     .header {
         background-color: #006600;
         padding: 20px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+    .header img {
+        height: 70px;
+    }
+    .header-title {
         color: white;
-        text-align: center;
         font-size: 28px;
         font-weight: bold;
     }
     .subheader {
-        text-align: center;
-        font-size: 18px;
+        font-size: 16px;
         color: white;
-        margin-top: -10px;
     }
 </style>
 """, unsafe_allow_html=True)
 
 # ==== Header Section ====
-st.markdown('<div class="header">SDI HIDAYATUTH THOLIBIN</div>', unsafe_allow_html=True)
-st.markdown('<div class="subheader">Website Resmi SDI Hitto - Cerdas dan Islami</div>', unsafe_allow_html=True)
-st.markdown("---")
+st.markdown('''
+<div class="header">
+    <img src="uploads/logo.png">
+    <div>
+        <div class="header-title">SD ISLAM HIDAYATUTH THOLIBIN</div>
+        <div class="subheader">Website Resmi SDI Hitto - Cerdas & Islami</div>
+    </div>
+</div>
+''', unsafe_allow_html=True)
 
-# ==== Navigation Toolbar (simulated using tabs) ====
-tabs = st.tabs(["Beranda", "Profil", "Sejarah", "Struktur Organisasi", "Perpustakaan", "Ujian Online", "Hubungi Kami"])
+# ==== Tabs Menu ====
+tabs = st.tabs([
+    "🏠 Beranda", 
+    "📘 Profil", 
+    "📖 Sejarah", 
+    "👥 Struktur Organisasi", 
+    "📚 Perpustakaan", 
+    "📝 Ujian Online", 
+    "🎓 Ekstrakurikuler", 
+    "📞 Hubungi Kami"
+])
 
+# ========== Tab: Beranda ==========
 with tabs[0]:
-    st.title("Beranda SDI Hitto")
+    st.title("Selamat Datang di SDI Hitto")
     st.markdown("""
     **NPSN**: 69946459  
     **Status**: Swasta  
@@ -49,11 +71,54 @@ with tabs[0]:
     **Tanggal SK Izin Operasional**: 2016-05-10  
     **Kepala Sekolah**: Alfia Indra Oktafiani
     """)
+    st.success("Website ini memuat informasi lengkap tentang SDI Hitto termasuk kegiatan siswa, hasil belajar, dan layanan digital.")
 
-    st.info("Selamat datang di Website SDI Hitto. Silakan pilih menu lain untuk melihat informasi lebih lanjut.")
+# ========== Tab: Profil ==========
+with tabs[1]:
+    st.subheader("Profil Sekolah")
+    st.write("SDI Hitto merupakan lembaga pendidikan dasar berbasis Islam yang berkomitmen mencetak generasi cerdas, berkarakter, dan islami.")
 
+# ========== Tab: Sejarah ==========
+with tabs[2]:
+    st.subheader("Sejarah Singkat")
+    st.write("Didirikan tahun 2012 oleh Yayasan Hidayatuth Tholibin, SDI Hitto tumbuh sebagai sekolah yang mengintegrasikan pendidikan umum dan agama secara seimbang.")
+
+# ========== Tab: Struktur Organisasi ==========
+with tabs[3]:
+    st.subheader("Struktur Organisasi")
+    st.write("Berikut struktur kepemimpinan SDI Hitto:")
+    st.markdown("""
+    - **Kepala Sekolah**: Alfia Indra Oktafiani  
+    - **Wakil Kepala Sekolah**: [diisi nanti]  
+    - **Guru Kelas dan Ekstrakurikuler**: [diisi]  
+    """)
+
+# ========== Tab: Perpustakaan ==========
+with tabs[4]:
+    st.subheader("Perpustakaan Digital")
+    st.info("Fitur perpustakaan digital sedang dalam pengembangan. Akan berisi daftar buku dan materi bacaan yang dapat diakses siswa.")
+
+# ========== Tab: Ujian Online ==========
+with tabs[5]:
+    st.subheader("Hasil Ujian Kelas 1")
+    data_path = "data/hasil_ujian.csv"
+    if os.path.exists(data_path):
+        df = pd.read_csv(data_path)
+        st.dataframe(df)
+        st.caption("Tabel di atas menampilkan nilai ujian siswa kelas 1.")
+    else:
+        st.warning("Data hasil ujian belum tersedia.")
+
+# ========== Tab: Ekstrakurikuler ==========
 with tabs[6]:
-    st.subheader("Hubungi Kami")
-    st.write("Alamat: Jl. Pendidikan No.1, Desa Keling, Kediri, Jawa Timur")
-    st.write("Email: sdi.hitto@gmail.com")
-    st.write("Telepon: (0354) 123456")
+    try:
+        st.switch_page("pages/ekstrakurikuler.py")
+    except Exception as e:
+        st.error("Halaman ekstrakurikuler belum ditemukan.")
+
+# ========== Tab: Hubungi Kami ==========
+with tabs[7]:
+    st.subheader("Kontak Sekolah")
+    st.write("📍 Alamat: Jl. Anggur no. 15 Ds. Tertek, RT/RW:1/6, Tertek, Pare")
+    st.write("📧 Email: sdi.hitto@gmail.com")
+    st.write("📞 Telepon: (0354) 123456")

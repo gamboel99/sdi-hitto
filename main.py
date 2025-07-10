@@ -1,3 +1,4 @@
+
 import streamlit as st
 import pandas as pd
 import os
@@ -35,7 +36,6 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# ==== Logo Handling ====
 logo = "https://raw.githubusercontent.com/gamboel99/sdi-hitto/main/uploads/logo.png"
 
 st.markdown(f'''
@@ -48,19 +48,11 @@ st.markdown(f'''
 </div>
 ''', unsafe_allow_html=True)
 
-# ==== Tabs Menu ====
 tabs = st.tabs([
-    "🏠 Beranda", 
-    "📘 Profil", 
-    "📖 Sejarah", 
-    "👥 Struktur Organisasi", 
-    "📚 Perpustakaan", 
-    "📝 Ujian Online", 
-    "🎓 Ekstrakurikuler", 
-    "📞 Hubungi Kami"
+    "🏠 Beranda", "📘 Profil", "📖 Sejarah", "👥 Struktur Organisasi",
+    "📚 Perpustakaan", "📝 Ujian Online", "🎓 Ekstrakurikuler", "📞 Hubungi Kami"
 ])
 
-# ========== Tab: Beranda ==========
 with tabs[0]:
     st.title("Selamat Datang di SDI Hitto")
     st.markdown("""
@@ -76,32 +68,26 @@ with tabs[0]:
     """)
     st.success("Website ini memuat informasi lengkap tentang SDI Hitto termasuk kegiatan siswa, hasil belajar, dan layanan digital.")
 
-# ========== Tab: Profil ==========
 with tabs[1]:
     st.subheader("Profil Sekolah")
     st.write("SDI Hitto merupakan lembaga pendidikan dasar berbasis Islam yang berkomitmen mencetak generasi cerdas, berkarakter, dan islami.")
 
-# ========== Tab: Sejarah ==========
 with tabs[2]:
     st.subheader("Sejarah Singkat")
     st.write("Didirikan tahun 2012 oleh Yayasan Hidayatuth Tholibin, SDI Hitto tumbuh sebagai sekolah yang mengintegrasikan pendidikan umum dan agama secara seimbang.")
 
-# ========== Tab: Struktur Organisasi ==========
 with tabs[3]:
     st.subheader("Struktur Organisasi")
-    st.write("Berikut struktur kepemimpinan SDI Hitto:")
     st.markdown("""
     - **Kepala Sekolah**: Alfia Indra Oktafiani  
     - **Wakil Kepala Sekolah**: [diisi nanti]  
     - **Guru Kelas dan Ekstrakurikuler**: [diisi]  
     """)
 
-# ========== Tab: Perpustakaan ==========
 with tabs[4]:
     st.subheader("Perpustakaan Digital")
     st.info("Fitur perpustakaan digital sedang dalam pengembangan. Akan berisi daftar buku dan materi bacaan yang dapat diakses siswa.")
 
-# ========== Tab: Ujian Online ==========
 with tabs[5]:
     st.subheader("Hasil Ujian Kelas 1")
     data_path = "data/hasil_ujian.csv"
@@ -112,11 +98,9 @@ with tabs[5]:
     else:
         st.warning("Data hasil ujian belum tersedia.")
 
-# ========== Tab: Ekstrakurikuler ==========
 with tabs[6]:
     ekstra.run()
-    
-# ========== Tab: Hubungi Kami ==========
+
 with tabs[7]:
     st.subheader("Kontak Sekolah")
     st.write("📍 Alamat: Jl. Anggur no. 15 Ds. Tertek, RT/RW:1/6, Tertek, Pare")

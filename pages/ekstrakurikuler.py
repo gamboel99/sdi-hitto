@@ -1,32 +1,30 @@
-# pages/ekstrakurikuler.py
-
 import streamlit as st
 
 def run():
     st.title("Ekstrakurikuler SDI Hitto")
-    
+
     ekstra = st.selectbox("Pilih Ekstrakurikuler", [
         "Pramuka", "Tari", "Lalaran", "Rebana", "Drumband", "Komputer / IT", "Lainnya"
     ])
 
     if ekstra == "Pramuka":
         st.subheader("⛺ Pramuka")
-        st.write("Kegiatan Pramuka melatih kedisiplinan, kepemimpinan, dan kerja sama.")
+        st.write("Kegiatan Pramuka di SDI Hitto melatih kedisiplinan, kepemimpinan, dan kerja sama dalam regu.")
     elif ekstra == "Tari":
         st.subheader("💃 Tari")
-        st.write("Melatih kreativitas dan kepekaan seni lewat gerak tari daerah.")
+        st.write("Ekstrakurikuler tari melestarikan seni budaya Nusantara melalui gerakan tradisional.")
     elif ekstra == "Lalaran":
         st.subheader("📖 Lalaran")
-        st.write("Hafalan doa-doa pendek, ayat Al-Qur'an, dan hadits harian.")
+        st.write("Kegiatan melafalkan hafalan-hafalan bacaan doa, ayat pendek, dan hadits.")
     elif ekstra == "Rebana":
         st.subheader("🥁 Rebana")
-        st.write("Grup rebana tampil di berbagai acara keagamaan sekolah.")
+        st.write("Grup rebana SDI Hitto mengiringi acara Islami seperti Maulid, PHBI, dan wisuda.")
     elif ekstra == "Drumband":
         st.subheader("🎷 Drumband")
-        st.write("Melatih kekompakan, ritme musik, dan performa dalam barisan.")
+        st.write("Latihan ritme dan kekompakan barisan serta musik marching band.")
     elif ekstra == "Komputer / IT":
         st.subheader("💻 Komputer / IT")
-        st.write("Pengenalan dasar komputer, aplikasi pendidikan, dan coding anak.")
+        st.write("Pengantar dunia digital: mengetik, coding dasar, dan pengenalan internet sehat.")
     else:
         st.subheader("✨ Lainnya")
-        st.write("Ekstrakurikuler lainnya sesuai minat siswa seperti menggambar, literasi, dll.")
+        st.write("Ekstrakurikuler lain seperti olahraga, menggambar, atau literasi sesuai minat siswa.")

@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import os
-import pages.ekstrakurikuler as ekstra
 
 st.set_page_config(page_title="SDI Hitto", layout="wide")
 

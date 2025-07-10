@@ -131,3 +131,10 @@ with tabs[7]:
     st.write("📍 Alamat: Jl. Anggur no. 15 Ds. Tertek, RT/RW:1/6, Tertek, Pare")
     st.write("📧 Email: sdi.hitto@gmail.com")
     st.write("📞 Telepon: (0354) 123456")
+
+st.markdown("""
+<hr style='margin-top: 50px;'>
+<center>
+    <small>Developed by <strong>CV. Mitra Utama Consultindo (MUC)</strong></small>
+</center>
+""", unsafe_allow_html=True)

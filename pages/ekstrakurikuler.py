@@ -9,22 +9,22 @@ def run():
 
     if ekstra == "Pramuka":
         st.subheader("⛺ Pramuka")
-        st.write("Melatih kedisiplinan, kepemimpinan, dan kerja sama dalam regu.")
+        st.write("Kegiatan Pramuka melatih kedisiplinan, kepemimpinan, dan kerja sama.")
     elif ekstra == "Tari":
         st.subheader("💃 Tari")
-        st.write("Mengenalkan gerakan tradisional dan seni tari daerah.")
+        st.write("Melatih kreativitas dan kepekaan seni lewat gerak tari daerah.")
     elif ekstra == "Lalaran":
         st.subheader("📖 Lalaran")
-        st.write("Melatih hafalan doa, hadits, dan ayat pendek.")
+        st.write("Hafalan doa-doa pendek, ayat Al-Qur'an, dan hadits harian.")
     elif ekstra == "Rebana":
         st.subheader("🥁 Rebana")
-        st.write("Grup rebana mengiringi kegiatan islami dan lomba.")
+        st.write("Grup rebana tampil di berbagai acara keagamaan sekolah.")
     elif ekstra == "Drumband":
         st.subheader("🎷 Drumband")
-        st.write("Pelatihan ritme dan marching band.")
+        st.write("Melatih kekompakan, ritme musik, dan performa dalam barisan.")
     elif ekstra == "Komputer / IT":
         st.subheader("💻 Komputer / IT")
-        st.write("Pengenalan komputer, mengetik, coding dasar.")
+        st.write("Pengenalan dasar komputer, aplikasi pendidikan, dan coding anak.")
     else:
         st.subheader("✨ Lainnya")
-        st.write("Ekstrakurikuler tambahan: menggambar, olahraga, literasi.")
+        st.write("Ekstrakurikuler lainnya sesuai minat siswa seperti menggambar, literasi, dll.")

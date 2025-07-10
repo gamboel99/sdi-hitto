@@ -1,9 +1,8 @@
 import streamlit as st
-import base64
 
 st.set_page_config(page_title="SDI Hitto", layout="wide")
 
-# ==== CSS Style ====
+# ==== Custom CSS for Green Theme and Header ====
 st.markdown("""
 <style>
     body {
@@ -26,45 +25,35 @@ st.markdown("""
         color: white;
         margin-top: -10px;
     }
-    .sidebar-content {
-        background-color: #e6ffe6;
-        padding: 20px;
-        border-left: 2px solid #006600;
-    }
 </style>
 """, unsafe_allow_html=True)
 
-# ==== HEADER ====
+# ==== Header Section ====
 st.markdown('<div class="header">SDI HIDAYATUTH THOLIBIN</div>', unsafe_allow_html=True)
-st.markdown('<div class="subheader">Website resmi SDI Hitto - Cerdas dan Islami</div>', unsafe_allow_html=True)
+st.markdown('<div class="subheader">Website Resmi SDI Hitto - Cerdas dan Islami</div>', unsafe_allow_html=True)
 st.markdown("---")
 
-# ==== KONTEN ====
-col1, col2 = st.columns([2, 1])
+# ==== Navigation Toolbar (simulated using tabs) ====
+tabs = st.tabs(["Beranda", "Profil", "Sejarah", "Struktur Organisasi", "Perpustakaan", "Ujian Online", "Hubungi Kami"])
 
-with col1:
-    st.subheader("📰 Kegiatan Terkini")
-    st.markdown("**Manasik Haji SDI Hitto Tahun 2025**")
-    st.image("https://via.placeholder.com/800x400.png?text=Kegiatan+Manasik+Haji")
-    st.write("""
-    Manasik Haji adalah latihan pelaksanaan ibadah haji yang dilakukan oleh siswa SDI Hitto. 
-    Kegiatan ini diikuti oleh seluruh siswa dari kelas 1 hingga kelas 6. 
-    Tujuannya adalah memberikan pemahaman dan keterampilan kepada siswa tentang pelaksanaan rukun Islam ke-5.
-    """)
-
-with col2:
-    st.markdown("### 📌 Recent Posts")
+with tabs[0]:
+    st.title("Beranda SDI Hitto")
     st.markdown("""
-    - Manasik Haji 2025
-    - Kunjungan ke Kebun Binatang
-    - Peringatan Maulid Nabi
-    - Latihan Upacara
+    **NPSN**: 69946459  
+    **Status**: Swasta  
+    **Bentuk Pendidikan**: SD  
+    **Status Kepemilikan**: Yayasan  
+    **SK Pendirian Sekolah**: Notaris No. 001  
+    **Tanggal SK Pendirian**: 2012-01-05  
+    **SK Izin Operasional**: 421/1653/418.47/2016  
+    **Tanggal SK Izin Operasional**: 2016-05-10  
+    **Kepala Sekolah**: Alfia Indra Oktafiani
     """)
 
-    st.markdown("### 💬 Recent Comments")
-    st.markdown("""
-    - *Ust. Ahmad* on Manasik Haji
-    - *Bu Wali Kelas* on Kegiatan Literasi
-    """)
+    st.info("Selamat datang di Website SDI Hitto. Silakan pilih menu lain untuk melihat informasi lebih lanjut.")
 
-st.markdown("---")
+with tabs[6]:
+    st.subheader("Hubungi Kami")
+    st.write("Alamat: Jl. Pendidikan No.1, Desa Keling, Kediri, Jawa Timur")
+    st.write("Email: sdi.hitto@gmail.com")
+    st.write("Telepon: (0354) 123456")

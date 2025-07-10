@@ -114,11 +114,8 @@ with tabs[5]:
 
 # ========== Tab: Ekstrakurikuler ==========
 with tabs[6]:
-    import pages.ekstrakurikuler as ekstra
-...
-# Di tab Ekstrakurikuler
-with tabs[6]:
     ekstra.run()
+    
 # ========== Tab: Hubungi Kami ==========
 with tabs[7]:
     st.subheader("Kontak Sekolah")
